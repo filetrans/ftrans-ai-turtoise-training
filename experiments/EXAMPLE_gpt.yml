@@ -2,6 +2,7 @@ name: CHANGEME_your_experiment_name
 model: extensibletrainer
 scale: 1
 gpu_ids: [0] # <-- unless you have multiple gpus, use this
+#gpu_ids: []
 start_step: 0 # -1 causes 0.pth to be saved!
 checkpointing_enabled: true  # <-- Gradient checkpointing. Enable for huge GPU memory savings. Disable for distributed training.
 fp16: false # TODO: why does enabling this with 8bit slow down perf??
@@ -15,7 +16,7 @@ datasets:
     n_workers: 8 # idk what this does
     batch_size: 128 # This leads to ~16GB of vram usage on my 3090.
     mode: paired_voice_audio
-    path: CHANGEME_path_to_training_dataset
+    path: /content/drive/MyDrive/Colab Notebooks/voice_dataset/train.txt #CHANGEME_path_to_training_dataset
     fetcher_mode: ['lj'] # CHANGEME if your dataset isn't in LJSpeech format
     phase: train
     max_wav_length: 255995
@@ -31,7 +32,7 @@ datasets:
     n_workers: 1
     batch_size: 64 # this could be higher probably
     mode: paired_voice_audio
-    path: CHANGEME_path_to_validation_dataset
+    path: /content/drive/MyDrive/Colab Notebooks/voice_dataset/val.txt
     fetcher_mode: ['lj']
     phase: val # might be broken idk
     max_wav_length: 255995
