@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 train () {
  cd codes && python3 train.py -opt ../experiments/EXAMPLE_gpt.yml
