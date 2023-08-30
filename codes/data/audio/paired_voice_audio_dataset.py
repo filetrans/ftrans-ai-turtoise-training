@@ -174,6 +174,7 @@ class TextWavLoader(torch.utils.data.Dataset):
     def get_wav_text_pair(self, audiopath_and_text):
         # separate filename and text
         audiopath, text, type = audiopath_and_text[0], audiopath_and_text[1], audiopath_and_text[2]
+        print("audiopath, text, type", audiopath, text, type)
         text_seq = self.get_text(text)
         wav = load_audio(audiopath, self.sample_rate)
         return (text_seq, wav, text, audiopath_and_text[0], type)
