@@ -27,7 +27,7 @@ try:
 except:
     APEX_AVAILABLE = False
 
-assert torch.cuda.is_available(), 'You need to have an Nvidia GPU with CUDA installed.'
+assert torch.cuda.is_available() or torch.backends.mps.is_available(), 'You need to have an Nvidia GPU with CUDA installed.'
 import maybe_bnb as mbnb
 
 num_cores = multiprocessing.cpu_count()

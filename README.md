@@ -26,26 +26,6 @@ pip install -r codes/requirements.laxed.txt # ONLY TESTED ON python=3.9; use you
 pip uninstall tensorboard # this is only needed if you want to view tensorboard logs. see https://github.com/pytorch/pytorch/issues/22676
 ```
 
-### Windows Training UI with Conda
-
-[![Tutorial](https://img.youtube.com/vi/lnIq4SFFXWs/0.jpg)](https://www.youtube.com/watch?v=lnIq4SFFXWs)
-
-
-This script by @devilismyfriend will install a conda environment named `DLAS` that uses a newer version of cuDNN for faster training:
-
-```bat
-git clone https://github.com/152334H/DL-Art-School
-cd DL-Art-School
-".\Setup DLAS.bat"
-```
-
-This requires that you have [miniconda](https://docs.conda.io/en/latest/miniconda.html)/[anaconda](https://www.anaconda.com/) (with python 3.10) and git installed.
-
-After it finishes setup, you can run it with `".\Start DLAS.cmd"`:
-
-
-![](https://i.imgur.com/knj39lE.png)
-
 
 ## CLI USAGE
 1. prepare a dataset (**LJSpeech format** is what's configured; if you can read the code you can use other formats like voxpopuli)
